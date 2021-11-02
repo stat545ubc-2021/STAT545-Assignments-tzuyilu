@@ -1,13 +1,23 @@
 ---
 title: "Assignment_B-1"
-author: "Tzu-Yi Lu"
+author: "Tzu-Yi Lu, "
 date: "2021 Nov 02"
-output: html_document
+output: github_document
 ---
 
-In my milestones 1~3 submitted to STAT545A, I kept extracting a specific subset from a current dataset. Therefore, I decided to  create a function that helps me with extracting a subgroup from the "vancouver_trees" dataset.
+```{r}
+# Load the packages used in this file.
+library(dplyr)
+library(tidyr)
+library(testthat)
+library(datateachr)
+```
 
-## Exercise 1: Make a Function && Exercise 2: Document your Function
+### Exercise 1: Make a Function && Exercise 2: Document your Function
+
+In my **milestones 1~3** submitted to STAT545A, I kept extracting a specific subset from a current dataset. Therefore, I decided to create a function that helps me with extracting a subgroup from the "**vancouver_trees**" dataset.
+
+I named the function "**extract_dat**", which means extracting data. 
 
 ```{r}
 #' @tilte Extracting a subset for the tree growth analysis
@@ -16,11 +26,7 @@ In my milestones 1~3 submitted to STAT545A, I kept extracting a specific subset 
 #' @params chosen_area The areas you want. This parameter should be a string.
 #' @params ref_date The reference date for calculating the tree age of each observation. This parameter should be a string. 
 #' @return The observations of the input_data located in the "chosen_area". The output will be a data frame.
-
 #' 
-
-#library(dplyr)
-#library(tidyr)
 extract_dat <- function(input_data,chosen_area,ref_date) {
   if (!is.data.frame(input_data)) {
     stop("The input data is not a data frame. The input data is ", class(input_data))
@@ -41,54 +47,54 @@ extract_dat <- function(input_data,chosen_area,ref_date) {
 
 ```
 
-I named the function as "extract_dat", which means extracting data. 
-
-
 ## Exercise 3: Examples
 
-# -------------
-# Example 1: 
-The way I used in my milestones. I extracted datasets in the *specified 5 areas* every time before I started my tree growth analysis.
+### Example 1: 
+The way which I used in my milestones. I extracted datasets in the **specified 5 areas** every time before I started my tree growth analysis.
 
 ```{r}
-# Load the dataset from the "datateachr" package.
-library(datateachr)
-
 # Define the areas I need.
 chosen_area <- c("ARBUTUS-RIDGE","DUNBAR-SOUTHLANDS","KITSILANO","SHAUGHNESSY","WEST POINT GREY")
 
 # Run the function
 VanTreeUBC <- extract_dat(vancouver_trees, chosen_area, "2021-11-02")
+head(VanTreeUBC)
 ```
 
-# -------------
-# Example 2: 
+### Example 2: 
+
 If I want to extract observations located in **"ARBUTUS-RIDGE"** only, and investigate the tree growth condition in **2015-Jan-01**, I can use the function in this way: 
+
 ```{r}
 VanTree_ARB_2015 <- extract_dat(vancouver_trees, "ARBUTUS-RIDGE", "2015-01-01")
 head(VanTree_ARB_2015)
 ```
 
-# -------------
-# Example 3: 
-# If I type in more than one ref_date, error will occur while running this function.
+### Example 3: 
+
+If I type in more than one date string in the ref_date, an error will occur while running this function.
+
 ```{r, error=TRUE}
 VanTree_err <- extract_dat(vancouver_trees, "ARBUTUS-RIDGE", c("2021-01-01","2021-11-02"))
 ```
 
 ## Exercise 4: Test the Function
 
-In the tree growth analysis, the tree age (which is computed by "**extract_dat**" function) is a critical variable.
+In the tree growth analysis, the tree age (which is computed by the "**extract_dat**" function) is a critical variable.
 
 The datasets with NA value in the tree_age column do not make sense in the following analysis. Therefore, I need to make sure that all the NA values are excluded in this column. Thus, the first test is to check that there is **no NA value in tree_age column**.
 
 Besides, the tree_age column should be a numeric variable for the following analysis. I also checked **the class of the tree_age column**.
 
+Finally, I want to confirm the class of the output variable as a data frame. 
+
+Here I will test the **VanTreeUBC** variable I got in the **Chunk 3**, and check the **tree_age** column in it.
+
 
 ```{r}
-library(testthat)
 chk <- test_that("Check the tree_age column in the subset.", {
   expect_equal(is.na(VanTreeUBC$tree_age), rep(FALSE,length(VanTreeUBC$tree_age)))
   expect_true(is.numeric(VanTreeUBC$tree_age))
+  expect_true(is.data.frame(VanTreeUBC))
 })
 ```
