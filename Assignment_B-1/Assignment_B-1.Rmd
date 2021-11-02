@@ -63,7 +63,7 @@ head(VanTreeUBC)
 
 ### Example 2: 
 
-If I want to extract observations located in **"ARBUTUS-RIDGE"** only, and investigate the tree growth condition in **2015-Jan-01**, I can use the function in this way: 
+If I want to extract observations located in **"ARBUTUS-RIDGE"** only, and investigate the tree growth condition in **2015-Jan-01**, I can use the function in this way below. The tree age column in the output variable (VanTree_ARB_2015) will be defined as the length with a unit of the year between the planted date of each observation and the specified date (2015-01-01). 
 
 ```{r}
 VanTree_ARB_2015 <- extract_dat(vancouver_trees, "ARBUTUS-RIDGE", "2015-01-01")
