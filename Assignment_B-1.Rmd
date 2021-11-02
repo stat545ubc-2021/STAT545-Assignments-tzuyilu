@@ -78,7 +78,17 @@ VanTree_err <- extract_dat(vancouver_trees, "ARBUTUS-RIDGE", c("2021-01-01","202
 
 ## Exercise 4: Test the Function
 
+In the tree growth analysis, the tree age (which is computed by "**extract_dat**" function) is a critical variable.
+
+The datasets with NA value in the tree_age column do not make sense in the following analysis. Therefore, I need to make sure that all the NA values are excluded in this column. Thus, the first test is to check that there is **no NA value in tree_age column**.
+
+Besides, the tree_age column should be a numeric variable for the following analysis. I also checked **the class of the tree_age column**.
+
+
 ```{r}
 library(testthat)
-
+chk <- test_that("Check the tree_age column in the subset.", {
+  expect_equal(is.na(VanTreeUBC$tree_age), rep(FALSE,length(VanTreeUBC$tree_age)))
+  expect_true(is.numeric(VanTreeUBC$tree_age))
+})
 ```
