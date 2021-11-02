@@ -111,7 +111,12 @@ head(VanTreeUBC)
 
 If I want to extract observations located in **“ARBUTUS-RIDGE”** only,
 and investigate the tree growth condition in **2015-Jan-01**, I can use
-the function in this way:
+the function in this way below.
+
+The output variable (VanTree\_ARB\_2015) consists of observations
+located in the ARBUTUS-RIDGE area only, and its tree\_age column will be
+defined as the year length between the planted date of each observation
+and the specified date (2015-01-01).
 
 ``` r
 VanTree_ARB_2015 <- extract_dat(vancouver_trees, "ARBUTUS-RIDGE", "2015-01-01")
@@ -173,4 +178,4 @@ chk <- test_that("Check the tree_age column in the subset.", {
 })
 ```
 
-    ## Test passed 😸
+    ## Test passed 🌈
