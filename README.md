@@ -1,7 +1,7 @@
 # Welcome to Tzu-Yi Lu's repository for Assignments in STAT545B at UBC!
 
 ## What is this project?
-This is a individual project to practice how to use GitHub and RStudio for code development. The project is for course STAT545 (2021W) at UBC. This GitHub repository is the place to create, review, and store files for the project.
+This is an individual project to practice how to use GitHub and RStudio for code development. The project is for course STAT545 (2021W) at UBC. This GitHub repository is the place to create, review, and store files for the project.
 
 ## What files are in the repository?
 This repository includes:
