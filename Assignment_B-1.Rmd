@@ -7,37 +7,78 @@ output: html_document
 
 In my milestones 1~3 submitted to STAT545A, I kept extracting a specific subset from a current dataset. Therefore, I decided to  create a function that helps me with extracting a subgroup from the "vancouver_trees" dataset.
 
+## Exercise 1: Make a Function && Exercise 2: Document your Function
+
 ```{r}
 #' @tilte Extracting a subset for the tree growth analysis
 #' @description  This function calculates the tree age of each observation in the input and then extracts a subset from it according to the specified area(s).
-#' @params input_data: The imported data for extracting a subset.
-#' @params chosen_area: The areas you want.
-#' @params ref_date: The reference date for calculating the tree age of each observation.
-#' @return The observations of the input_data located in the "chosen_area".
+#' @params input_data: The imported data for extracting a subset. This parameter should be a data frame.
+#' @params chosen_area The areas you want. This parameter should be a string.
+#' @params ref_date The reference date for calculating the tree age of each observation. This parameter should be a string. 
+#' @return The observations of the input_data located in the "chosen_area". The output will be a data frame.
 
 #' 
 
-library(dplyr)
-library(tidyr)
+#library(dplyr)
+#library(tidyr)
 extract_dat <- function(input_data,chosen_area,ref_date) {
-  output_data <-input_data%>%
-    mutate(tree_age = as.numeric(difftime(as.Date(ref_date),date_planted))/365) %>%
-    drop_na() %>%
-    filter(neighbourhood_name  %in% chosen_area)
+  if (!is.data.frame(input_data)) {
+    stop("The input data is not a data frame. The input data is ", class(input_data))
+  }
+  if (!is.character(chosen_area)) {
+    stop("The chosen_area variable is not a string. The chosen_area is ", class(chosen_area))
+  }
+  if (!is.character(ref_date)) {
+    stop("The ref_date is not a character. The ref_date is ", class(ref_date))
+  }
+  
+  output_data <-input_data %>%
+    dplyr::mutate(tree_age = as.numeric(difftime(as.Date(ref_date),date_planted))/365) %>%
+    tidyr::drop_na() %>%
+    dplyr::filter(neighbourhood_name  %in% chosen_area)
   return(output_data)
   }
 
 ```
 
-I named the function as "extract_dat", which means extracting data.
+I named the function as "extract_dat", which means extracting data. 
+
+
+## Exercise 3: Examples
+
+# -------------
+# Example 1: 
+The way I used in my milestones. I extracted datasets in the *specified 5 areas* every time before I started my tree growth analysis.
 
 ```{r}
-
-# load the dataset from the "datateachr" package
+# Load the dataset from the "datateachr" package.
 library(datateachr)
 
+# Define the areas I need.
 chosen_area <- c("ARBUTUS-RIDGE","DUNBAR-SOUTHLANDS","KITSILANO","SHAUGHNESSY","WEST POINT GREY")
-VanTreeUBC <- output_data(vancouver_trees, chosen_area, "2021-11-02")
 
+# Run the function
+VanTreeUBC <- extract_dat(vancouver_trees, chosen_area, "2021-11-02")
 ```
 
+# -------------
+# Example 2: 
+If I want to extract observations located in **"ARBUTUS-RIDGE"** only, and investigate the tree growth condition in **2015-Jan-01**, I can use the function in this way: 
+```{r}
+VanTree_ARB_2015 <- extract_dat(vancouver_trees, "ARBUTUS-RIDGE", "2015-01-01")
+head(VanTree_ARB_2015)
+```
+
+# -------------
+# Example 3: 
+# If I type in more than one ref_date, error will occur while running this function.
+```{r, error=TRUE}
+VanTree_err <- extract_dat(vancouver_trees, "ARBUTUS-RIDGE", c("2021-01-01","2021-11-02"))
+```
+
+## Exercise 4: Test the Function
+
+```{r}
+library(testthat)
+
+```
