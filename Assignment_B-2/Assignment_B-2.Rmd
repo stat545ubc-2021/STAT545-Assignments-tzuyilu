@@ -1,0 +1,12 @@
+---
+title: "Assignment_B-2"
+author: "Tzu-Yi Lu, "
+date: "2021 Nov 20"
+output: github_document
+---
+
+```{r}
+library(devtools)
+packageVersion("devtools")
+
+```
