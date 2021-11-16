@@ -25,3 +25,7 @@ use_r("RegionSel")
 
 ## Rendering my functions
 document()
+
+## Adding test functions in the package.
+use_test("TreeAgeCal")
+use_test("RegionSel")
