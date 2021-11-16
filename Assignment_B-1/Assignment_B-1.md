@@ -178,4 +178,4 @@ chk <- test_that("Check the tree_age column in the subset.", {
 })
 ```
 
-    ## Test passed 🌈
+    ## Test passed 🎊
