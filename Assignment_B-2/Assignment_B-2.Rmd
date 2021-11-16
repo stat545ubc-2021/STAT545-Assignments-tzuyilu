@@ -5,16 +5,20 @@ date: "2021 Nov 20"
 output: github_document
 ---
 
-```{r}
-# Loading required package: usethis
+#The procedures I create a new package
+
+## Loading required package: usethis
 library(devtools)
-# Confirming package version of devtools
+
+## Confirming package version of devtools
 packageVersion("devtools") 
-# Creating a new package named "ExtractData"
+
+## Creating a new package named "ExtractData"
 create_package("/Users/ziyi/GoogleDrive_p/My Drive/PhD/1_STAT545/Assignments/functions-tzuyilu/Assignment_B-2/ExtractData")
 
-# Make the "ExtractData" directory also a Git repository
+## Making the "ExtractData" directory also a Git repository
 use_git()
 
-
-```
+## Creating two functions in this package
+use_r("TreeAgeCal")
+use_r("RegionSel")
