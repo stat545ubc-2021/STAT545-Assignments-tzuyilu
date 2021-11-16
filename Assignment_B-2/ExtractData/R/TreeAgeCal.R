@@ -1,11 +1,11 @@
-#' @tilte Calculating the tree ages
+#' @title  Calculating the tree ages
 #'
-#' @description  This function calculates the tree age of each observation in the input.
+#' @description   This function calculates the tree age of each observation in the input.
 #'
-#' @params input_data Data with planted_date of trees. This parameter should be a data frame.
-#' @params ref_date The Reference date for calculating the tree age of each observation. This parameter should be a string.
+#' @param  input_data Data with planted_date of trees. This parameter should be a data frame.
+#' @param  ref_date The Reference date for calculating the tree age of each observation. This parameter should be a string.
 #'
-#' @return A new data with a column of the tree age of each observation. The output will be a data frame.
+#' @return  A new data with a column of the tree age of each observation. The output will be a data frame.
 #'
 #' @export
 #' @examples
