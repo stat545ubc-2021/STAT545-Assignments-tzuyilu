@@ -30,5 +30,7 @@ document()
 use_test("TreeAgeCal")
 use_test("RegionSel")
 
+## Storing data in this package
+use_data(vancouver_trees)
 
 ## Click the "Check" button under the "Build" tab
