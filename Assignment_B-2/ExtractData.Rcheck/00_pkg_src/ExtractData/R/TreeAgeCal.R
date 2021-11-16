@@ -23,6 +23,6 @@ TreeAgeCal <- function(input_data,ref_date) {
 
   output_data <-input_data %>%
     dplyr::mutate(tree_age = as.numeric(difftime(as.Date(ref_date),date_planted))/365) %>%
-    tidyr::drop_na() %>%
+    tidyr::drop_na()
   return(output_data)
 }

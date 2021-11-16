@@ -10,7 +10,7 @@
 #' @export
 #' @examples
 #' RegionSel(input_data,"ARBUTUS-RIDGE")
-#' RegionSel(input_data,c("ARBUTUS-RIDGE","DUNBAR-SOUTHLANDS","KITSILANO","SHAUGHNESSY","WEST POINT GREY"))
+#' RegionSel(input_data,c("SHAUGHNESSY","WEST POINT GREY"))
 #'
 
 RegionSel <- function(input_data,chosen_area) {

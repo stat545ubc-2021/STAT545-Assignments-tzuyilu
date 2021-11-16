@@ -1,4 +1,9 @@
-test_that("Check no NAs and column class in the TreeAgeCal function.", {
-  testthat::expect_equal(is.na(input_data$tree_age), rep(FALSE,length(input_data$tree_age)))
-  testthat::expect_true(is.numeric(input_data$tree_age))
+TR <- TreeAgeCal(vancouver_trees, "2021-11-20") # test result
+
+test_that("TreeAgeCal drops NA values correctly", {
+  testthat::expect_equal(is.na(TR$tree_age), rep(FALSE,length(TR$tree_age)))
+})
+
+test_that("TreeAgeCal outputs data in correct format", {
+  testthat::expect_true(is.numeric(TR$tree_age))
 })
