@@ -83,12 +83,12 @@ Execution halted
   Running ‘testthat.R’
 Running the tests in ‘tests/testthat.R’ failed.
 Last 13 lines of output:
-   1. ├─testthat::expect_true(is.data.frame(VanTreeUBC)) test-RegionSel.R:2:2
+   1. ├─testthat::expect_true(is.data.frame(input_data)) test-RegionSel.R:2:2
    2. │ └─testthat::quasi_label(enquo(object), label, arg = "object")
    3. │   └─rlang::eval_bare(expr, quo_get_env(quo))
-   4. └─base::is.data.frame(VanTreeUBC)
+   4. └─base::is.data.frame(input_data)
   ── Error (test-TreeAgeCal.R:2:3): Check no NAs and column class in the TreeAgeCal function. ──
-  Error in `eval_bare(expr, quo_get_env(quo))`: object 'VanTreeUBC' not found
+  Error in `eval_bare(expr, quo_get_env(quo))`: object 'input_data' not found
   Backtrace:
       █
    1. └─testthat::expect_equal(...) test-TreeAgeCal.R:2:2

@@ -13,7 +13,7 @@ RoxygenNote: 7.1.2
 Suggests: testthat (>= 3.0.0)
 Config/testthat/edition: 3
 NeedsCompilation: no
-Packaged: 2021-11-16 21:49:30 UTC; ziyi
+Packaged: 2021-11-16 21:52:53 UTC; ziyi
 Author: First Last [aut, cre] (YOUR-ORCID-ID)
 Maintainer: First Last <first.last@example.com>
-Built: R 4.1.1; ; 2021-11-16 21:49:35 UTC; unix
+Built: R 4.1.1; ; 2021-11-16 21:53:00 UTC; unix
