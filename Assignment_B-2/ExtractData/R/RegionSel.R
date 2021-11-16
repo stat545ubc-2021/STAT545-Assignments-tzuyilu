@@ -1,9 +1,9 @@
-#' @tilte Select targeted regions in the data
+#' @title  Select targeted regions in the data
 #'
-#' @description  This function selects the specified regions in the data.
+#' @description   This function selects the specified regions in the data.
 #'
-#' @params input_data Data with planted_date of trees. This parameter should be a data frame.
-#' @params chosen_area The areas you are interested in. This parameter should be a string.
+#' @param  input_data Data with planted_date of trees. This parameter should be a data frame.
+#' @param  chosen_area The areas you are interested in. This parameter should be a string.
 #'
 #' @return A filtered data in the interested regions. The output will be a data frame.
 #'
