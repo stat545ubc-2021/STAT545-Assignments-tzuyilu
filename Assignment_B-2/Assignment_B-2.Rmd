@@ -22,3 +22,6 @@ use_git()
 ## Creating two functions in this package
 use_r("TreeAgeCal")
 use_r("RegionSel")
+
+## Rendering my functions
+document()
