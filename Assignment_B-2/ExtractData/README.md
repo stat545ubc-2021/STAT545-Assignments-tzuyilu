@@ -24,10 +24,7 @@ devtools::install_github("stat545ubc-2021/STAT545-Assignments-tzuyilu/tree/main/
 
 This is a basic example which shows you how to solve a common problem:
 
-``` r
-## basic example code
-#library(ExtractData)
-```
+\#`{r example} ## basic example code #library(ExtractData) #`
 
 What is special about using `README.Rmd` instead of just `README.md`?
 You can include R chunks like so:
