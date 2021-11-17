@@ -5,11 +5,23 @@ date: "2021 Nov 20"
 output: github_document
 ---
 
+# Tidy Submission
+(-) 1.Increase the version number in the DESCRIPTION file
+(-) 2.Tag a release in your GitHub repository corresponding to your submission before the deadline, using the package version as your tag.
+(-) 3.Grab the URL corresponding to your tagged release, and submit that to canvas.
+
+Repo contents:
+  (v) NAMESPACE
+  DESCRIPTION
+  README.Rmd (and README.md)
+  (v) R/ directory
+  (v) tests/ directory
+  (v) man/ directory
 
 # Exercise 1: Function(s)
 
-## Loading required package: usethis
 ```{r}
+## Loading required package: usethis
 library(devtools)
 
 ## Confirming package version of devtools
