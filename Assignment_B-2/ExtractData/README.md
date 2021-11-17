@@ -17,7 +17,7 @@ repository on github:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("stat545ubc-2021/STAT545-Assignments-tzuyilu/tree/main/Assignment_B-2/ExtractData")
+devtools::install_github("stat545ubc-2021/functions-tzuyilu/Assignment_B-2/ExtractData/")
 ```
 
 ## Example
