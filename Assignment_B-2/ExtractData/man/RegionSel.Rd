@@ -18,7 +18,7 @@ A filtered data in the interested regions. The output will be a data frame.
 This function selects the specified regions in the data.
 }
 \examples{
-RegionSel(input_data,"ARBUTUS-RIDGE")
-RegionSel(input_data,c("ARBUTUS-RIDGE","DUNBAR-SOUTHLANDS","KITSILANO","SHAUGHNESSY","WEST POINT GREY"))
+RegionSel(datateachr::vancouver_trees,"ARBUTUS-RIDGE")
+RegionSel(datateachr::vancouver_trees,c("SHAUGHNESSY","WEST POINT GREY"))
 
 }

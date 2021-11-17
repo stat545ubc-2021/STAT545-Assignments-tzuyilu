@@ -1,12 +1,11 @@
 Package: ExtractData
-Title: What the Package Does (One Line, Title Case)
+Title: Extract data
 Version: 0.0.0.9000
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+    person("Tzu-Yi", "Lu", , "tzuyilu@student.ubc.ca", role = c("aut", "cre"))
+Description: 'RegionSel' extracts data located in specific locations within a tree dataset.
+             'TreeAgeCal' computes the tree age information from planted date.
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
@@ -16,3 +15,13 @@ Suggests:
 Config/testthat/edition: 3
 Depends: 
     R (>= 2.10)
+Imports: 
+    tidyr (>= 1.1.4),
+    dplyr (>= 1.0.7),
+    datateachr (>= 0.2.1),
+    magrittr (>= 2.0.1)
+Remotes:  
+    tidyverse/dplyr,
+    tidyverse/tidyr,
+    UBC-MDS/datateachr,
+    tidyverse/magrittr

@@ -5,9 +5,11 @@ date: "2021 Nov 20"
 output: github_document
 ---
 
-#The procedures I create a new package
+
+# Exercise 1: Function(s)
 
 ## Loading required package: usethis
+```{r}
 library(devtools)
 
 ## Confirming package version of devtools
@@ -25,12 +27,34 @@ use_r("RegionSel")
 
 ## Rendering my functions
 document()
+```
 
+# Exercise 2: High-level documentation
+```{r}
+
+```
+
+# Exercise 3: DESCRIPTION file
+```{r}
+# Storing data in this package
+use_r("vancouver_trees")
+
+# Importing other packages
+use_dev_package("dplyr")
+use_dev_package("tidyr")
+use_dev_package("datateachr")
+use_dev_package("magrittr")
+
+# Authorizing a licence
+use_mit_license()
+
+# Editting author information manually
+
+```
+
+# Exercise 4: Tests
+```{r}
 ## Adding test functions in the package
 use_test("TreeAgeCal")
 use_test("RegionSel")
-
-## Storing data in this package
-use_data(vancouver_trees)
-
-## Click the "Check" button under the "Build" tab
+```

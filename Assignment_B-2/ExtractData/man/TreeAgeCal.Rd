@@ -18,7 +18,7 @@ A new data with a column of the tree age of each observation. The output will be
 This function calculates the tree age of each observation in the input.
 }
 \examples{
-TreeAgeCal(input_data,"2021-11-20")
-TreeAgeCal(input_data,"2014-05-12")
+TreeAgeCal(datateachr::vancouver_trees,"2021-11-20")
+TreeAgeCal(datateachr::vancouver_trees,"2014-05-12")
 
 }

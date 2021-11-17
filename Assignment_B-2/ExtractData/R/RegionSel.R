@@ -6,11 +6,12 @@
 #' @param  chosen_area The areas you are interested in. This parameter should be a string.
 #'
 #' @return A filtered data in the interested regions. The output will be a data frame.
+#' @importFrom magrittr %>%
 #'
 #' @export
 #' @examples
-#' RegionSel(input_data,"ARBUTUS-RIDGE")
-#' RegionSel(input_data,c("SHAUGHNESSY","WEST POINT GREY"))
+#' RegionSel(datateachr::vancouver_trees,"ARBUTUS-RIDGE")
+#' RegionSel(datateachr::vancouver_trees,c("SHAUGHNESSY","WEST POINT GREY"))
 #'
 
 RegionSel <- function(input_data,chosen_area) {
