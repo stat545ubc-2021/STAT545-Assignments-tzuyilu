@@ -31,6 +31,8 @@ document()
 
 # Exercise 2: High-level documentation
 ```{r}
+use_readme_rmd()
+devtools::build_readme()
 
 ```
 
@@ -48,7 +50,7 @@ use_dev_package("magrittr")
 # Authorizing a licence
 use_mit_license()
 
-# Editting author information manually
+# Editing author information manually
 
 ```
 

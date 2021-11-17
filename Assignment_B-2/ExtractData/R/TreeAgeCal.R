@@ -22,8 +22,7 @@ TreeAgeCal <- function(input_data,ref_date) {
     stop("The ref_date is not a character. The ref_date is ", class(ref_date))
   }
 
-  output_data <-input_data %>%
-    dplyr::mutate(tree_age = as.numeric(difftime(as.Date(ref_date),date_planted))/365) %>%
+  output_data <- dplyr::mutate(input_data$tree_age = as.numeric(difftime(as.Date(ref_date),input_data$date_planted))/365) %>%
     tidyr::drop_na()
   return(output_data)
 }
