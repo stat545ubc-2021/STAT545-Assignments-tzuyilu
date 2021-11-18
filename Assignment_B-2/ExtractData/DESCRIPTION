@@ -1,6 +1,6 @@
 Package: ExtractData
 Title: Extract data
-Version: 0.0.0.9000
+Version: 1.0.0
 Authors@R: 
     person("Tzu-Yi", "Lu", , "tzuyilu@student.ubc.ca", role = c("aut", "cre"))
 Description: This package is developed for the data analysis on STAT545B 2021W at UBC.
