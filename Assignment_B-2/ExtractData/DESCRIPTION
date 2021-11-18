@@ -3,8 +3,12 @@ Title: Extract data
 Version: 0.0.0.9000
 Authors@R: 
     person("Tzu-Yi", "Lu", , "tzuyilu@student.ubc.ca", role = c("aut", "cre"))
-Description: 'RegionSel' extracts data located in specific locations within a tree dataset.
-             'TreeAgeCal' computes the tree age information from planted date.
+Description: This package is developed for the data analysis on STAT545B 2021W at UBC.
+             The purpose is to replace repeated codes in the assignments.
+             The stored data ("vancouver_trees") is a data set from "datateachr" package.
+             There are two functions in this package, including 'RegionSel' and 'TreeAgeCal'.
+             'RegionSel' extracts data located in specific locations within a tree dataset.
+             'TreeAgeCal' computes the tree age information according to the planted date and the specified reference date.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
@@ -19,8 +23,9 @@ Imports:
     tidyr (>= 1.1.4),
     dplyr (>= 1.0.7),
     datateachr (>= 0.2.1),
-    magrittr (>= 2.0.1)
-Remotes:  
+    magrittr (>= 2.0.1),
+    utils (>= 4.1.1)
+Remotes: 
     tidyverse/dplyr,
     tidyverse/tidyr,
     UBC-MDS/datateachr,
