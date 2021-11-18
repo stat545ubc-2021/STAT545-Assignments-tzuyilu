@@ -5,7 +5,7 @@ date: "2021 Nov 20"
 output: github_document
 ---
 
-Repo contents:
+Repo contents check:
   (v) NAMESPACE
   (v) DESCRIPTION
   (v) README.Rmd (and README.md)
@@ -19,18 +19,18 @@ Repo contents:
 library(devtools)
 
 ## Confirming package version of devtools
-packageVersion("devtools") 
+utils::packageVersion("devtools") 
 
 ## Creating a new package named "ExtractData"
-create_package("/Users/ziyi/GoogleDrive_p/My Drive/PhD/1_STAT545/Assignments/functions-tzuyilu/Assignment_B-2/ExtractData")
+usethis::create_package("/Users/ziyi/GoogleDrive_p/My Drive/PhD/1_STAT545/Assignments/functions-tzuyilu/Assignment_B-2/ExtractData")
 
 ## Making the "ExtractData" directory also a Git repository
-use_git()
+usethis::use_git()
 
 ## Creating two functions in this package
-use_r("TreeAgeCal")
-use_r("RegionSel")
-use_r("global")
+usethis::use_r("TreeAgeCal")
+usethis::use_r("RegionSel")
+usethis::use_r("global")
 
 ## Rendering my functions
 document()
@@ -38,24 +38,25 @@ document()
 
 # Exercise 2: High-level documentation
 ```{r}
-use_readme_rmd()
+## Creating a README.rmd file
+usethis::use_readme_rmd()
+## Knitting the README.rmd file to README.md
 devtools::build_readme()
-
 ```
 
 # Exercise 3: DESCRIPTION file
 ```{r}
-# Storing data in this package
-use_r("vancouver_trees")
+# Storing data in this package (THIS FILE IS FROM "datateachr" PACKAGE)
+usethis::use_r("vancouver_trees")
 
-# Importing other packages
-use_dev_package("dplyr")
-use_dev_package("tidyr")
-use_dev_package("datateachr")
-use_dev_package("magrittr")
+# Importing other packages to ensure package dependencies
+usethis::use_dev_package("dplyr")
+usethis::use_dev_package("tidyr")
+usethis::use_dev_package("datateachr")
+usethis::use_dev_package("magrittr")
 
 # Authorizing a licence
-use_mit_license()
+usethis::use_mit_license()
 
 # Editing author information manually
 
@@ -64,8 +65,11 @@ use_mit_license()
 # Exercise 4: Tests
 ```{r}
 ## Adding test functions in the package
-use_test("TreeAgeCal")
-use_test("RegionSel")
+usethis::use_test("TreeAgeCal")
+usethis::use_test("RegionSel")
+
+# Running tests
+devtools::test()
 ```
 
 
