@@ -1,3 +1,5 @@
-test_that("multiplication works", {
-  expect_equal(2 * 2, 4)
+TR <- OutputSum(vancouver_trees,"species_name","tree_age") # test result
+
+test_that("OutputSum outputs data in correct format", {
+  testthat::expect_true(is.numeric(TR$tree_age))
 })
