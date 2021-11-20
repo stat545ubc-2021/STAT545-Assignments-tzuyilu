@@ -4,7 +4,7 @@
 \alias{TreeAgeCal}
 \title{Calculating the tree ages}
 \usage{
-TreeAgeCal(input_data, ref_date, sum_col)
+TreeAgeCal(input_data, ref_date)
 }
 \arguments{
 \item{input_data}{Data with planted_date of trees. This parameter should be a data frame.}

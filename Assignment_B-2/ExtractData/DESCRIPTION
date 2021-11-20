@@ -6,7 +6,7 @@ Authors@R:
 Description: This package is developed for the data analysis on STAT545B 2021W at UBC.
              The purpose is to replace repeated codes in the assignments.
              The stored data ("vancouver_trees") is a data set from "datateachr" package.
-             There are two functions in this package, including 'RegionSel' and 'TreeAgeCal'.
+             There are three functions in this package, including 'RegionSel', 'TreeAgeCal', and 'OutputSum'.
              'RegionSel' extracts data located in specific locations within a tree dataset.
              'TreeAgeCal' computes the tree age information according to the planted date and the specified reference date.
              'OutputSum' generates a summary of chosen columns according to specific group.
