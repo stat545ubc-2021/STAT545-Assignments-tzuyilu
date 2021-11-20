@@ -4,7 +4,7 @@
 \alias{TreeAgeCal}
 \title{Calculating the tree ages}
 \usage{
-TreeAgeCal(input_data, ref_date)
+TreeAgeCal(input_data, ref_date, sum_col)
 }
 \arguments{
 \item{input_data}{Data with planted_date of trees. This parameter should be a data frame.}
@@ -12,7 +12,8 @@ TreeAgeCal(input_data, ref_date)
 \item{ref_date}{The Reference date for calculating the tree age of each observation. This parameter should be a string.}
 }
 \value{
-A new data with a column of the tree age of each observation. The output will be a data frame.
+Input data with a column of the tree age of each observation.
+The output will be a data frame.
 }
 \description{
 This function calculates the tree age of each observation in the input.

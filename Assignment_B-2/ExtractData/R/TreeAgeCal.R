@@ -4,8 +4,10 @@
 #'
 #' @param  input_data Data with planted_date of trees. This parameter should be a data frame.
 #' @param  ref_date The Reference date for calculating the tree age of each observation. This parameter should be a string.
-#'
-#' @return  A new data with a column of the tree age of each observation. The output will be a data frame.
+#' 
+#' @return  Input data with a column of the tree age of each observation. 
+#'          The output will be a data frame.
+#' 
 #' @importFrom magrittr %>%
 #'
 #' @export
@@ -14,14 +16,13 @@
 #' TreeAgeCal(datateachr::vancouver_trees,"2014-05-12")
 #'
 
-TreeAgeCal <- function(input_data,ref_date) {
+TreeAgeCal <- function(input_data,ref_date,sum_col) {
   if (!is.data.frame(input_data)) {
     stop("The input data is not a data frame. The input data is ", class(input_data))
   }
   if (!is.character(ref_date)) {
     stop("The ref_date is not a character. The ref_date is ", class(ref_date))
   }
-
   output_data <- input_data %>%
     dplyr::mutate(tree_age = as.numeric(difftime(as.Date(ref_date),date_planted))/365) %>%
     tidyr::drop_na()
