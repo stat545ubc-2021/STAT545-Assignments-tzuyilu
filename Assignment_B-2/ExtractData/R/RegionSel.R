@@ -35,7 +35,7 @@
 #'  {Result}
 #'
 
-CAMPESTRE<- function(input_data, col_name, chosen_grp) {
+RegionSel<- function(input_data, col_name, chosen_grp) {
   if (!is.data.frame(input_data)) {
     stop("The input data is not a data frame. The input data is ", class(input_data))
   }
