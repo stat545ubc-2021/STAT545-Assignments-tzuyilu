@@ -31,7 +31,7 @@
 #'
 #'
 #' If you want to choose all "ACER" and "FRAXINUS" data from the "vancouver_trees" dataset:
-#'  {Syntax} → RegionSel(vancouver_trees, "genus_name", c("ACER","FRAXINUS"))
+#'  {Syntax} → SubGrpSel(vancouver_trees, "genus_name", c("ACER","FRAXINUS"))
 #'  {Result}
 #'
 
