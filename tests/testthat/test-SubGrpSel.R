@@ -7,4 +7,3 @@ test_that("SubGrpSel chooses regions correctly", {
   TR <- SubGrpSel(vancouver_trees,"neighbourhood_name",c("ARBUTUS-RIDGE","DUNBAR-SOUTHLANDS"))
   testthat::expect_equal(unique(TR$neighbourhood_name), c("ARBUTUS-RIDGE","DUNBAR-SOUTHLANDS"))
 })
-
