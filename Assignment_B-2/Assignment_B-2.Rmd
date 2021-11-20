@@ -30,6 +30,7 @@ usethis::use_git()
 ## Creating two functions in this package
 usethis::use_r("TreeAgeCal")
 usethis::use_r("RegionSel")
+usethis::use_r("OutputSum")
 usethis::use_r("global")
 
 ## Rendering my functions
