@@ -31,24 +31,27 @@
 #'
 #'
 #' If you want to choose all "ACER" and "FRAXINUS" data from the "vancouver_trees" dataset:
-#'  {Syntax} → SubGrpSel(vancouver_trees, "genus_name", c("ACER","FRAXINUS"))
+#'  {Syntax} → RegionSel(vancouver_trees, "genus_name", c("ACER","FRAXINUS"))
 #'  {Result}
 #'
 
-RegionSel <- function(input_data, col_name, chosen_grp) {
+SubGrpSel<- function(input_data, col_name, chosen_grp) {
+  
+  # Checking the formats of inputs are correct 
   if (!is.data.frame(input_data)) {
     stop("The input data is not a data frame. The input data is ", class(input_data))
   }
-  
   if (!is.character(col_name)) {
     stop("The col_name variable is not a character. The col_name is ", class(chosen_area))
   }
-  
   if (!is.character(chosen_grp)) {
     stop("The chosen_grp variable is not a character. The chosen_grp is ", class(chosen_area))
   }
   
-  output_data <-input_data %>%
-    dplyr::filter(neighbourhood_name  %in% chosen_area)
+  # Creating expression
+  expression <- paste('output_data <- dplyr::filter(input_data,',col_name,'%in% chosen_grp)')
+  # Evaluating expression
+  eval(parse(text=expression))
+  
   return(output_data)
 }
