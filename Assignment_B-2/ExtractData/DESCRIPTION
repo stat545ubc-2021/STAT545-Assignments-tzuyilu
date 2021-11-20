@@ -9,6 +9,7 @@ Description: This package is developed for the data analysis on STAT545B 2021W a
              There are two functions in this package, including 'RegionSel' and 'TreeAgeCal'.
              'RegionSel' extracts data located in specific locations within a tree dataset.
              'TreeAgeCal' computes the tree age information according to the planted date and the specified reference date.
+             'OutputSum' generates a summary of chosen columns according to specific group.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
