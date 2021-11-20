@@ -66,9 +66,8 @@ usethis::use_mit_license()
 # Exercise 4: Tests
 ```{r}
 ## Adding test functions in the package
-usethis::use_test("TreeAgeCal")
+usethis::use_test("TmeDifCal")
 usethis::use_test("SubGrpSel")
-usethis::use_test("RegionSel")
 usethis::use_test("OutputSum")
 
 # Running tests
