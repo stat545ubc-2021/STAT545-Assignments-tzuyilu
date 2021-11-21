@@ -43,10 +43,20 @@ If you want to group the data set by "species_name" and then output the summary 
  10 ALTISSIMA              15.9           3           21.5             3          8.64     4
  # … with 273 more rows
 
-
-
-
-
 If you want to generate a summary with multiple columns:
 OutputSum(vancouver_trees,"neighbourhood_name",c("diameter","height_range_id"))
+# A tibble: 22 × 7
+neighbourhood_name       height_range_id_… height_range_id… height_range_id… height_range_id… height_range_id…     n
+<chr>                                <dbl>            <dbl>            <dbl>            <dbl>            <dbl> <int>
+  1 ARBUTUS-RIDGE                         2.72                0               10                0             1.55  5169
+2 DOWNTOWN                              2.44                0                8                0             1.22  5159
+3 DUNBAR-SOUTHLANDS                     3.03                0               10                0             1.93  9415
+4 FAIRVIEW                              2.80                0                9                0             1.52  4002
+5 GRANDVIEW-WOODLAND                    2.60                0                9                0             1.56  6703
+6 HASTINGS-SUNRISE                      2.46                0                8                0             1.40 10547
+7 KENSINGTON-CEDAR COTTAGE              2.60                0               10                0             1.42 11042
+8 KERRISDALE                            2.81                0               10                0             1.69  6936
+9 KILLARNEY                             2.50                0                9                0             1.26  6148
+10 KITSILANO                             3.26                0               10                0             1.86  8115
+# … with 12 more rows
 }
