@@ -1,1 +1,1 @@
-utils::globalVariables(c("neighbourhood_name", "date_planted"))
+utils::globalVariables(c("ref_date","output_data","chosen_area"))

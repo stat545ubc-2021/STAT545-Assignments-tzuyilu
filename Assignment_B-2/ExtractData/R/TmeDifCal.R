@@ -19,28 +19,11 @@
 #' @export
 #' @examples
 #'
-#' If you want to calculate tree age based on the planted date and the specific date:
-#'
-#' {Syntax}
+#' ## If you want to calculate tree age based on the planted date and the specific date:
+#' ## {Syntax}
+#' \dontrun{
 #' TmeDifCal(vancouver_trees,"date_planted","2021-11-20","tree_age")
-#'
-#' {Result}
-#'# A tibble: 41,859 × 21
-#'tree_id civic_number std_street  genus_name species_name cultivar_name common_name  assigned root_barrier plant_area
-#'<dbl>        <dbl> <chr>       <chr>      <chr>        <chr>         <chr>        <chr>    <chr>        <chr>
-#'  1  149556          494 W 58TH AV   ULMUS      AMERICANA    BRANDON       BRANDON ELM  N        N            N
-#'2  149590          858 E 39TH AV   FRAXINUS   AMERICANA    AUTUMN APPLA… AUTUMN APPL… Y        N            4
-#'3  149617         4909 SHERBROOKE… ACER       PLATANOIDES  COLUMNARE     COLUMNAR NO… N        N            6
-#'4  149618         4925 SHERBROOKE… ACER       PLATANOIDES  COLUMNARE     COLUMNAR NO… N        N            6
-#'5  149619         4969 SHERBROOKE… ACER       PLATANOIDES  COLUMNARE     COLUMNAR NO… N        N            3
-#'6  149625          720 E 39TH AV   FRAXINUS   AMERICANA    AUTUMN APPLA… AUTUMN APPL… N        N            3
-#'7  149640         6968 SELKIRK ST  ACER       PLATANOIDES  COLUMNARE     COLUMNAR NO… N        N            N
-#'8  149673         5241 WINDSOR ST  FRAXINUS   OXYCARPA     RAYWOOD       RAYWOOD ASH  N        N            4
-#'9  149683         7011 SELKIRK ST  ACER       PLATANOIDES  COLUMNARE     COLUMNAR NO… N        N            N
-#'10  149684         1223 W 54TH AV   ACER       PLATANOIDES  COLUMNARE     COLUMNAR NO… N        N            N
-# … with 41,849 more rows, and 11 more variables: on_street_block <dbl>, on_street <chr>, neighbourhood_name <chr>,
-#   street_side_name <chr>, height_range_id <dbl>, diameter <dbl>, curb <chr>, date_planted <date>, longitude <dbl>,
-#   latitude <dbl>, tree_age <dbl>
+#' }
 
 
 TmeDifCal <- function(input_data,start_date,end_date,n_col_name) {
