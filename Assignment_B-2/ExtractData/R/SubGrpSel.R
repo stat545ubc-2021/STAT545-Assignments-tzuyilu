@@ -49,9 +49,9 @@ RegionSel<- function(input_data, col_name, chosen_grp) {
   }
 
   # Creating expression
-  expression <- paste('output_data <- dplyr::filter(input_data,',col_name,'%in% chosen_grp)')
+  exp_text <- paste('output_data <- dplyr::filter(input_data,',col_name,'%in% chosen_grp)')
   # Evaluating expression
-  eval(parse(text=expression))
+  eval(parse(text=exp_text))
 
   return(output_data)
 }
