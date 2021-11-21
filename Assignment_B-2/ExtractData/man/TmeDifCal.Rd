@@ -13,7 +13,7 @@ This parameter should be a data frame.}
 \item{start_date}{One of columns in a data set.
 This parameter should be a character, which must be one of the columns of input_data.}
 
-\item{end_date}{Either a specified date or another column as the end date.
+\item{end_date}{A specific date for calculating time lengths.
 This parameter should be a character.}
 
 \item{n_col_name}{The name for the new column you create in this function.}

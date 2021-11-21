@@ -6,7 +6,7 @@
 #' This parameter should be a data frame.
 #' @param  start_date One of columns in a data set.
 #' This parameter should be a character, which must be one of the columns of input_data.
-#' @param  end_date Either a specified date or another column as the end date.
+#' @param  end_date A specific date for calculating time lengths.
 #' This parameter should be a character.
 #' @param  n_col_name The name for the new column you create in this function.
 #'
@@ -33,8 +33,10 @@ TmeDifCal <- function(input_data,start_date,end_date,n_col_name) {
 
   # Creating expression
   exp_text <- paste('output_data <- input_data %>%
-    dplyr::mutate(',n_col_name,' = as.numeric(difftime(as.Date(start_date),end_date))/365) %>%
-    tidyr::drop_na()',sep='')
+  dplyr::mutate(',n_col_name,' = as.numeric(difftime(as.Date(end_date),as.Date(',start_date,')))/365) %>%
+                    tidyr::drop_na()',sep='')
+
+
   # Evaluating expression
   eval(parse(text=exp_text))
 
