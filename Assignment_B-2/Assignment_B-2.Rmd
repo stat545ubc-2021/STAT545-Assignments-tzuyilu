@@ -28,7 +28,7 @@ usethis::create_package("/Users/ziyi/GoogleDrive_p/My Drive/PhD/1_STAT545/Assign
 usethis::use_git()
 
 ## Creating two functions in this package
-usethis::use_r("TreeAgeCal")
+usethis::use_r("TmeDifCal")
 usethis::use_r("SubGrpSel")
 usethis::use_r("OutputSum")
 usethis::use_r("global")
