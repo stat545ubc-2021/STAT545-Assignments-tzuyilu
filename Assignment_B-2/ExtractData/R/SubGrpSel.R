@@ -11,7 +11,10 @@
 #' @export
 #' @examples
 #' If you want to choose data located in a specific area ("ARBUTUS-RIDGE") from the "vancouver_trees" dataset:
-#'  {Syntax} → SubGrpSel(vancouver_trees,"neighbourhood_name","ARBUTUS-RIDGE")
+#'
+#'  {Syntax}
+#'  SubGrpSel(vancouver_trees,"neighbourhood_name","ARBUTUS-RIDGE")
+#'
 #'  {Result}
 #'  # A tibble: 5,169 × 20
 #'  tree_id civic_number std_street  genus_name species_name cultivar_name common_name assigned root_barrier plant_area on_street_block on_street
@@ -31,11 +34,30 @@
 #'
 #'
 #' If you want to choose all "ACER" and "FRAXINUS" data from the "vancouver_trees" dataset:
-#'  {Syntax} → RegionSel(vancouver_trees, "genus_name", c("ACER","FRAXINUS"))
+#'
+#'  {Syntax}
+#'  SubGrpSel(vancouver_trees, "genus_name", c("ACER","FRAXINUS"))
+#'
 #'  {Result}
+#'  # A tibble: 43,443 × 20
+#'  tree_id civic_number std_street  genus_name species_name cultivar_name common_name  assigned root_barrier plant_area
+#'  <dbl>        <dbl> <chr>       <chr>      <chr>        <chr>         <chr>        <chr>    <chr>        <chr>
+#'  1  149590          858 E 39TH AV   FRAXINUS   AMERICANA    AUTUMN APPLA… AUTUMN APPL… Y        N            4
+#'  2  149604         5032 WINDSOR ST  ACER       CAMPESTRE    NA            HEDGE MAPLE  N        N            4
+#'  3  149617         4909 SHERBROOKE… ACER       PLATANOIDES  COLUMNARE     COLUMNAR NO… N        N            6
+#'  4  149618         4925 SHERBROOKE… ACER       PLATANOIDES  COLUMNARE     COLUMNAR NO… N        N            6
+#'  5  149619         4969 SHERBROOKE… ACER       PLATANOIDES  COLUMNARE     COLUMNAR NO… N        N            3
+#'  6  149625          720 E 39TH AV   FRAXINUS   AMERICANA    AUTUMN APPLA… AUTUMN APPL… N        N            3
+#'  7  149640         6968 SELKIRK ST  ACER       PLATANOIDES  COLUMNARE     COLUMNAR NO… N        N            N
+#'  8  149673         5241 WINDSOR ST  FRAXINUS   OXYCARPA     RAYWOOD       RAYWOOD ASH  N        N            4
+#'  9  149680         5311 WINDSOR ST  ACER       CAMPESTRE    NA            HEDGE MAPLE  N        N            4
+#'  10  149683         7011 SELKIRK ST  ACER       PLATANOIDES  COLUMNARE     COLUMNAR NO… N        N            N
+#'  # … with 43,433 more rows, and 10 more variables: on_street_block <dbl>, on_street <chr>, neighbourhood_name <chr>,
+#'  #   street_side_name <chr>, height_range_id <dbl>, diameter <dbl>, curb <chr>, date_planted <date>, longitude <dbl>,
+#'  #   latitude <dbl>
 #'
 
-RegionSel<- function(input_data, col_name, chosen_grp) {
+SubGrpSel<- function(input_data, col_name, chosen_grp) {
   if (!is.data.frame(input_data)) {
     stop("The input data is not a data frame. The input data is ", class(input_data))
   }
