@@ -12,11 +12,12 @@ data set (vancouver\_trees) for the following analysis. This package is
 developed for the data analysis on STAT545B 2021W at UBC. The purpose is
 to replace repeated codes in the assignments. The stored data
 (“vancouver\_trees”) is a data set from “datateachr” package. There
-are two functions in this package, including ‘RegionSel’ and
-‘TreeAgeCal’. ‘RegionSel’ extracts data located in specific
-locations within a tree dataset. ‘TreeAgeCal’ computes the tree age
-information according to the planted date and the specified reference
-date.
+are three functions in this package, including ‘SubGrpSel’, ‘TmeDifCal’,
+and ‘OutputSum’. ‘SubGrpSel’ extracts data located in specific locations
+within a tree dataset. ‘TmeDifCal’ computes the time lengths information
+according to a vector including time information and the specified
+reference date. ‘OutputSum’ generates a summary of chosen columns for
+each group.
 
 ## Installation
 
@@ -25,47 +26,47 @@ repository on github:
 
 ``` r
 install.packages("devtools")
-#> Installing package into '/private/var/folders/qv/k14kjsvs7gs2r20k_cfcqssc0000gn/T/RtmphVLkjg/temp_libpath56961ae6c66'
+#> Installing package into '/private/var/folders/qv/k14kjsvs7gs2r20k_cfcqssc0000gn/T/RtmpWrbuEj/temp_libpath1e0d46eaa6a0'
 #> (as 'lib' is unspecified)
 #> 
 #> The downloaded binary packages are in
-#>  /var/folders/qv/k14kjsvs7gs2r20k_cfcqssc0000gn/T//RtmpX50jaI/downloaded_packages
+#>  /var/folders/qv/k14kjsvs7gs2r20k_cfcqssc0000gn/T//RtmpPsMJKp/downloaded_packages
 devtools::install_github("stat545ubc-2021/functions-tzuyilu/Assignment_B-2/ExtractData/")
 #> Downloading GitHub repo stat545ubc-2021/functions-tzuyilu@HEAD
-#> dplyr (ca5611050... -> 4b8125132...) [GitHub]
-#> tidyr (84fc5bd2a... -> 4973240e5...) [GitHub]
+#> dplyr (ca5611050... -> 0189058d6...) [GitHub]
+#> tidyr (84fc5bd2a... -> 265091d90...) [GitHub]
 #> rlang (20b7fbda7... -> 5f4f4f473...) [GitHub]
 #> Downloading GitHub repo tidyverse/dplyr@HEAD
 #> rlang (20b7fbda7... -> 5f4f4f473...) [GitHub]
 #> Downloading GitHub repo r-lib/rlang@HEAD
-#>      checking for file ‘/private/var/folders/qv/k14kjsvs7gs2r20k_cfcqssc0000gn/T/RtmpX50jaI/remotes8e6c899fcd/r-lib-rlang-5f4f4f4/DESCRIPTION’ ...  ✓  checking for file ‘/private/var/folders/qv/k14kjsvs7gs2r20k_cfcqssc0000gn/T/RtmpX50jaI/remotes8e6c899fcd/r-lib-rlang-5f4f4f4/DESCRIPTION’
+#>      checking for file ‘/private/var/folders/qv/k14kjsvs7gs2r20k_cfcqssc0000gn/T/RtmpPsMJKp/remotes25ca6d920aff/r-lib-rlang-5f4f4f4/DESCRIPTION’ ...  ✓  checking for file ‘/private/var/folders/qv/k14kjsvs7gs2r20k_cfcqssc0000gn/T/RtmpPsMJKp/remotes25ca6d920aff/r-lib-rlang-5f4f4f4/DESCRIPTION’
 #>   ─  preparing ‘rlang’:
-#>   ✓  checking DESCRIPTION meta-information
-#> ─  cleaning src
-#>   ─  checking for LF line-endings in source and make files and shell scripts
+#>      checking DESCRIPTION meta-information ...  ✓  checking DESCRIPTION meta-information
+#>   ─  cleaning src
+#>   ─  checking for LF line-endings in source and make files and shell scripts (375ms)
 #>   ─  checking for empty or unneeded directories
 #>   ─  building ‘rlang_0.99.0.9000.tar.gz’
 #>      
 #> 
-#> Installing package into '/private/var/folders/qv/k14kjsvs7gs2r20k_cfcqssc0000gn/T/RtmphVLkjg/temp_libpath56961ae6c66'
+#> Installing package into '/private/var/folders/qv/k14kjsvs7gs2r20k_cfcqssc0000gn/T/RtmpWrbuEj/temp_libpath1e0d46eaa6a0'
 #> (as 'lib' is unspecified)
-#>      checking for file ‘/private/var/folders/qv/k14kjsvs7gs2r20k_cfcqssc0000gn/T/RtmpX50jaI/remotes8e645877269/tidyverse-dplyr-4b81251/DESCRIPTION’ ...  ✓  checking for file ‘/private/var/folders/qv/k14kjsvs7gs2r20k_cfcqssc0000gn/T/RtmpX50jaI/remotes8e645877269/tidyverse-dplyr-4b81251/DESCRIPTION’
+#>      checking for file ‘/private/var/folders/qv/k14kjsvs7gs2r20k_cfcqssc0000gn/T/RtmpPsMJKp/remotes25ca1772fa61/tidyverse-dplyr-0189058/DESCRIPTION’ ...  ✓  checking for file ‘/private/var/folders/qv/k14kjsvs7gs2r20k_cfcqssc0000gn/T/RtmpPsMJKp/remotes25ca1772fa61/tidyverse-dplyr-0189058/DESCRIPTION’
 #>   ─  preparing ‘dplyr’:
 #>      checking DESCRIPTION meta-information ...  ✓  checking DESCRIPTION meta-information
 #>   ─  cleaning src
 #>   ─  installing the package to process help pages
-#>   ─  cleaning src (9s)
+#>   ─  cleaning src (8.6s)
 #>   ─  checking for LF line-endings in source and make files and shell scripts
 #>   ─  checking for empty or unneeded directories
-#>      Removed empty directory ‘dplyr/inst’
+#>    Removed empty directory ‘dplyr/inst’
 #>   ─  building ‘dplyr_1.0.7.9000.tar.gz’
 #>      
 #> 
-#> Installing package into '/private/var/folders/qv/k14kjsvs7gs2r20k_cfcqssc0000gn/T/RtmphVLkjg/temp_libpath56961ae6c66'
+#> Installing package into '/private/var/folders/qv/k14kjsvs7gs2r20k_cfcqssc0000gn/T/RtmpWrbuEj/temp_libpath1e0d46eaa6a0'
 #> (as 'lib' is unspecified)
 #> Downloading GitHub repo tidyverse/tidyr@HEAD
 #> 
-#>      checking for file ‘/private/var/folders/qv/k14kjsvs7gs2r20k_cfcqssc0000gn/T/RtmpX50jaI/remotes8e6785f53e3/tidyverse-tidyr-4973240/DESCRIPTION’ ...  ✓  checking for file ‘/private/var/folders/qv/k14kjsvs7gs2r20k_cfcqssc0000gn/T/RtmpX50jaI/remotes8e6785f53e3/tidyverse-tidyr-4973240/DESCRIPTION’
+#>      checking for file ‘/private/var/folders/qv/k14kjsvs7gs2r20k_cfcqssc0000gn/T/RtmpPsMJKp/remotes25ca39e390fa/tidyverse-tidyr-265091d/DESCRIPTION’ ...  ✓  checking for file ‘/private/var/folders/qv/k14kjsvs7gs2r20k_cfcqssc0000gn/T/RtmpPsMJKp/remotes25ca39e390fa/tidyverse-tidyr-265091d/DESCRIPTION’
 #>   ─  preparing ‘tidyr’:
 #>      checking DESCRIPTION meta-information ...  ✓  checking DESCRIPTION meta-information
 #>   ─  cleaning src
@@ -74,19 +75,19 @@ devtools::install_github("stat545ubc-2021/functions-tzuyilu/Assignment_B-2/Extra
 #>   ─  building ‘tidyr_1.1.4.9000.tar.gz’
 #>      
 #> 
-#> Installing package into '/private/var/folders/qv/k14kjsvs7gs2r20k_cfcqssc0000gn/T/RtmphVLkjg/temp_libpath56961ae6c66'
+#> Installing package into '/private/var/folders/qv/k14kjsvs7gs2r20k_cfcqssc0000gn/T/RtmpWrbuEj/temp_libpath1e0d46eaa6a0'
 #> (as 'lib' is unspecified)
 #> Skipping install of 'rlang' from a github remote, the SHA1 (5f4f4f47) has not changed since last install.
 #>   Use `force = TRUE` to force installation
-#>      checking for file ‘/private/var/folders/qv/k14kjsvs7gs2r20k_cfcqssc0000gn/T/RtmpX50jaI/remotes8e6210ed378/stat545ubc-2021-STAT545-Assignments-tzuyilu-dff8a95/Assignment_B-2/ExtractData/DESCRIPTION’ ...  ✓  checking for file ‘/private/var/folders/qv/k14kjsvs7gs2r20k_cfcqssc0000gn/T/RtmpX50jaI/remotes8e6210ed378/stat545ubc-2021-STAT545-Assignments-tzuyilu-dff8a95/Assignment_B-2/ExtractData/DESCRIPTION’
+#>      checking for file ‘/private/var/folders/qv/k14kjsvs7gs2r20k_cfcqssc0000gn/T/RtmpPsMJKp/remotes25ca1f32bb9e/stat545ubc-2021-STAT545-Assignments-tzuyilu-1563f0d/Assignment_B-2/ExtractData/DESCRIPTION’ ...  ✓  checking for file ‘/private/var/folders/qv/k14kjsvs7gs2r20k_cfcqssc0000gn/T/RtmpPsMJKp/remotes25ca1f32bb9e/stat545ubc-2021-STAT545-Assignments-tzuyilu-1563f0d/Assignment_B-2/ExtractData/DESCRIPTION’
 #>   ─  preparing ‘ExtractData’:
-#>      checking DESCRIPTION meta-information ...  ✓  checking DESCRIPTION meta-information
+#>   ✓  checking DESCRIPTION meta-information
 #>   ─  checking for LF line-endings in source and make files and shell scripts
 #>   ─  checking for empty or unneeded directories
 #>   ─  building ‘ExtractData_1.0.0.tar.gz’
 #>      
 #> 
-#> Installing package into '/private/var/folders/qv/k14kjsvs7gs2r20k_cfcqssc0000gn/T/RtmphVLkjg/temp_libpath56961ae6c66'
+#> Installing package into '/private/var/folders/qv/k14kjsvs7gs2r20k_cfcqssc0000gn/T/RtmpWrbuEj/temp_libpath1e0d46eaa6a0'
 #> (as 'lib' is unspecified)
 ```
 
@@ -103,6 +104,7 @@ What is special about using `README.Rmd` instead of just `README.md`?
 You can include R chunks like so:
 
 ``` r
+# Demonstrating data stored in this package
 summary(vancouver_trees)
 #>     tree_id        civic_number    std_street         genus_name       
 #>  Min.   :    12   Min.   :    0   Length:146611      Length:146611     

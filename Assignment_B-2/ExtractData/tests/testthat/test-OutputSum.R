@@ -1,3 +1,3 @@
 test_that("OutputSum outputs data in a class of data frame", {
-  testthat::expect_true(is.data.frame(OutputSum(vancouver_trees,"KITSILANO")))
+  testthat::expect_true(is.data.frame(vancouver_trees,"species_name","diameter"))
 })

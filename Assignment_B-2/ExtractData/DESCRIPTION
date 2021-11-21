@@ -6,10 +6,10 @@ Authors@R:
 Description: This package is developed for the data analysis on STAT545B 2021W at UBC.
              The purpose is to replace repeated codes in the assignments.
              The stored data ("vancouver_trees") is a data set from "datateachr" package.
-             There are three functions in this package, including 'RegionSel', 'TreeAgeCal', and 'OutputSum'.
+             There are three functions in this package, including 'SubGrpSel', 'TmeDifCal', and 'OutputSum'.
              'SubGrpSel' extracts data located in specific locations within a tree dataset.
-             'TmeDifCal' computes the tree age information according to the planted date and the specified reference date.
-             'OutputSum' generates a summary of chosen columns according to specific group.
+             'TmeDifCal' computes the time lengths information according to a vector including time information and the specified reference date.
+             'OutputSum' generates a summary of chosen columns for each group.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true

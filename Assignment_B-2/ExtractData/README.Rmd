@@ -22,10 +22,10 @@ The goal of ExtractData is to extract the interested data in a massive data set 
 This package is developed for the data analysis on STAT545B 2021W at UBC.
 The purpose is to replace repeated codes in the assignments.
 The stored data ("vancouver_trees") is a data set from "datateachr" package.
-There are three functions in this package, including 'RegionSel', 'TreeAgeCal', and 'OutputSum'.
-'SubGrpSel' extracts specific categories under a targeted column from the data set.
-'TreeAgeCal' computes the tree age information according to the planted date and the specified reference date.
-'OutputSum' generates a summary of chosen columns according to specific group..
+There are three functions in this package, including 'SubGrpSel', 'TmeDifCal', and 'OutputSum'.
+'SubGrpSel' extracts data located in specific locations within a tree dataset.
+'TmeDifCal' computes the time lengths information according to a vector including time information and the specified reference date.
+'OutputSum' generates a summary of chosen columns for each group.
 
 ## Installation
 
@@ -48,8 +48,10 @@ library(ExtractData)
 What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
 
 ```{r cars}
+# Demonstrating data stored in this package
 summary(vancouver_trees)
 head(vancouver_trees)
+
 ```
 
 You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this. You could also use GitHub Actions to re-render `README.Rmd` every time you push. An example workflow can be found here: <https://github.com/r-lib/actions/tree/master/examples>.

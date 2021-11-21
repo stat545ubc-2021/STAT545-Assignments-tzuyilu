@@ -5,14 +5,6 @@ date: "2021 Nov 20"
 output: github_document
 ---
 
-Repo contents check:
-  (v) NAMESPACE
-  (v) DESCRIPTION
-  (v) README.Rmd (and README.md)
-  (v) R/ directory
-  (v) tests/ directory
-  (v) man/ directory
-
 # Exercise 1: Function(s)
 ```{r}
 ## Loading required package: usethis
@@ -33,8 +25,6 @@ usethis::use_r("SubGrpSel")
 usethis::use_r("OutputSum")
 usethis::use_r("global")
 
-## Rendering my functions
-document()
 ```
 
 # Exercise 2: High-level documentation
