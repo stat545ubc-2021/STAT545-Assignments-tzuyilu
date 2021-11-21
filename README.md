@@ -16,7 +16,7 @@ This repository includes:
   - *Assignment_B-2.Rmd*: The codes I used when building the package **ExtractData**. 
                           The main purpose is to create a package and to design functions for this package.  
                           Notably, there is no md file named "Assignment_B-2".
-  - Folder *ExtractData*: This folder contains all required files for the "ExtractData" package.
+  - Folder **"ExtractData"**: This folder contains all required files for the "ExtractData" package.
 
 
 ## How to run code that appears in this repository?
