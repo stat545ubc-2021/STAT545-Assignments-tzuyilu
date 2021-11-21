@@ -43,6 +43,7 @@ usethis::use_r("vancouver_trees")
 # Importing other packages to ensure package dependencies
 usethis::use_dev_package("dplyr")
 usethis::use_dev_package("tidyr")
+usethis::use_dev_package("tidyr")
 usethis::use_dev_package("datateachr")
 usethis::use_dev_package("magrittr")
 
