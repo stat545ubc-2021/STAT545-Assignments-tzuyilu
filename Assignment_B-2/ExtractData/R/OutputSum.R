@@ -1,6 +1,6 @@
-#' @title  Outputting summarized information of a data set
+#' @title  Outputting a summary
 #'
-#' @description   This function generates a summary of specific columns.
+#' @description   This function generates a summary of specific columns from the input data.
 #'
 #' @param  input_data Data with planted_date of trees. This parameter should be a data frame.
 #' @param  ref_group The grouping basis of the data. This parameter should be a string.
@@ -13,8 +13,13 @@
 #'
 #' @export
 #' @examples
-#' Specify a group basis and a column which you are interested in:
-#' OutputSum(datateachr::vancouver_trees,"species_name","tree_age")
+#' If you want to group the data set by "species_name" and then output the summary about "tree_age":
+#'
+#'  {Syntax}
+#'  OutputSum(vancouver_trees,"species_name","tree_age")
+#'
+#'  {Result}
+#'
 #'
 #' If you want to generate a summary with multiple columns:
 #' OutputSum(datateachr::vancouver_trees,"neighbourhood_name",c("tree_age","diameter"))
@@ -31,14 +36,20 @@ OutputSum <- function(input_data,ref_group,sum_col) {
   if (!is.character(sum_col)) {
     stop("The sum_col is not a character. The sum_col is ", class(ref_date))
   }
+  if (is.na(match(ref_group,names(input_data)))){
+    stop("There is no column name ",ref_group," in your input_data. Please check again.")
+  }
+  if (is.na(match(sum_col,names(input_data)))){
+    stop("There is no column name ",sum_col," in your input_data. Please check again.")
+  }
 
-  # Generating the summary
-  ind <- grep(ref_group, colnames(input_data))
+  # Creating expression
+  exp_text <- paste('output_data <- input_data %>%
+    dplyr::group_by(',ref_group,')%>%
+    dplyr::summarise(dplyr::across(',sum_col,',.f=list("mean"=mean,"min"=min,"max"=max,"median"=min,"sd"=sd),na.rm=TRUE),n=dplyr::n())',sep='')
 
-  output_data <- input_data %>%
-    dplyr::group_by(input_data[ind])%>%
-    dplyr::summarise(dplyr::across(sum_col,.f=list("mean"=mean,"min"=min,"max"=max,"median"=min,"sd"=sd),na.rm=TRUE),n=n())
-
+  # Evaluating expression
+  eval(parse(text=exp_text))
 
   return(output_data)
 }

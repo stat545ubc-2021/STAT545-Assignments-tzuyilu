@@ -36,7 +36,6 @@ TmeDifCal <- function(input_data,start_date,end_date,n_col_name) {
   dplyr::mutate(',n_col_name,' = as.numeric(difftime(as.Date(end_date),as.Date(',start_date,')))/365) %>%
                     tidyr::drop_na()',sep='')
 
-
   # Evaluating expression
   eval(parse(text=exp_text))
 

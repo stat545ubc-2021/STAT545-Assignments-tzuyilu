@@ -2,7 +2,7 @@
 % Please edit documentation in R/OutputSum.R
 \name{OutputSum}
 \alias{OutputSum}
-\title{Outputting summarized information of a data set}
+\title{Outputting a summary}
 \usage{
 OutputSum(input_data, ref_group, sum_col)
 }
@@ -18,11 +18,16 @@ A data set with summarized information of specified columns.
 The output will be a data frame.
 }
 \description{
-This function generates a summary of specific columns.
+This function generates a summary of specific columns from the input data.
 }
 \examples{
-Specify a group basis and a column which you are interested in:
-OutputSum(datateachr::vancouver_trees,"species_name","tree_age")
+If you want to group the data set by "species_name" and then output the summary about "tree_age":
+
+ {Syntax}
+ OutputSum(vancouver_trees,"species_name","tree_age")
+
+ {Result}
+
 
 If you want to generate a summary with multiple columns:
 OutputSum(datateachr::vancouver_trees,"neighbourhood_name",c("tree_age","diameter"))
