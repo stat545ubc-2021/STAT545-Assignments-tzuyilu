@@ -1,0 +1,137 @@
+* using log directory ‘/Users/ziyi/GoogleDrive_p/My Drive/PhD/1_STAT545/Assignments/functions-tzuyilu/Assignment_B-2/ExtractData.Rcheck’
+* using R version 4.1.1 (2021-08-10)
+* using platform: x86_64-apple-darwin17.0 (64-bit)
+* using session charset: UTF-8
+* using options ‘--no-manual --as-cran’
+* checking for file ‘ExtractData/DESCRIPTION’ ... OK
+* this is package ‘ExtractData’ version ‘1.0.0’
+* package encoding: UTF-8
+* checking package namespace information ... OK
+* checking package dependencies ... OK
+* checking if this is a source package ... OK
+* checking if there is a namespace ... OK
+* checking for executable files ... OK
+* checking for hidden files and directories ... OK
+* checking for portable file names ... OK
+* checking for sufficient/correct file permissions ... OK
+* checking serialization versions ... OK
+* checking whether package ‘ExtractData’ can be installed ... OK
+* checking installed package size ... OK
+* checking package directory ... OK
+* checking for future file timestamps ... OK
+* checking DESCRIPTION meta-information ... OK
+* checking top-level files ... OK
+* checking for left-over files ... OK
+* checking index information ... OK
+* checking package subdirectories ... OK
+* checking R files for non-ASCII characters ... OK
+* checking R files for syntax errors ... OK
+* checking whether the package can be loaded ... OK
+* checking whether the package can be loaded with stated dependencies ... OK
+* checking whether the package can be unloaded cleanly ... OK
+* checking whether the namespace can be loaded with stated dependencies ... OK
+* checking whether the namespace can be unloaded cleanly ... OK
+* checking loading without being on the library search path ... OK
+* checking dependencies in R code ... OK
+* checking S3 generic/method consistency ... OK
+* checking replacement functions ... OK
+* checking foreign function calls ... OK
+* checking R code for possible problems ... NOTE
+OutputSum: no visible binding for global variable ‘ref_date’
+OutputSum: no visible binding for global variable ‘output_data’
+SubGrpSel: no visible binding for global variable ‘chosen_area’
+SubGrpSel: no visible binding for global variable ‘output_data’
+TmeDifCal: no visible binding for global variable ‘output_data’
+Undefined global functions or variables:
+  chosen_area output_data ref_date
+* checking Rd files ... OK
+* checking Rd metadata ... OK
+* checking Rd line widths ... NOTE
+Rd file 'OutputSum.Rd':
+  \examples lines wider than 100 characters:
+     ## neighbourhood_name       height_range_id_… height_range_id… height_range_id… height_range_id… height_range_id…     n
+     ## <chr>                                <dbl>            <dbl>            <dbl>            <dbl>            <dbl> <int>
+     ##   1 ARBUTUS-RIDGE                         2.72                0               10                0             1.55  5169
+     ## 2 DOWNTOWN                              2.44                0                8                0             1.22  5159
+     ## 3 DUNBAR-SOUTHLANDS                     3.03                0               10                0             1.93  9415
+     ## 4 FAIRVIEW                              2.80                0                9                0             1.52  4002
+     ## 5 GRANDVIEW-WOODLAND                    2.60                0                9                0             1.56  6703
+     ## 6 HASTINGS-SUNRISE                      2.46                0                8                0             1.40 10547
+     ## 7 KENSINGTON-CEDAR COTTAGE              2.60                0               10                0             1.42 11042
+     ## 8 KERRISDALE                            2.81                0               10                0             1.69  6936
+     ## 9 KILLARNEY                             2.50                0                9                0             1.26  6148
+     ## 10 KITSILANO                             3.26                0               10                0             1.86  8115
+
+Rd file 'SubGrpSel.Rd':
+  \examples lines wider than 100 characters:
+      ## If you want to choose data located in a specific area ("ARBUTUS-RIDGE") from the "vancouver_trees" dataset:
+       ## tree_id civic_number std_street  genus_name species_name cultivar_name common_name assigned root_barrier plant_area on_street_bloc ... [TRUNCATED]
+       ## <dbl>        <dbl> <chr>       <chr>      <chr>        <chr>         <chr>       <chr>    <chr>        <chr>                <dbl>  ... [TRUNCATED]
+       ## 1  155344         2408 W 18TH AV   ACER       SPECIES      NA            MAPLE SPEC… N        N            10                    3 ... [TRUNCATED]
+       ## 2  155720         2696 W 35TH AV   ACER       GRISEUM      NA            PAPERBARK … N        N            10                    2 ... [TRUNCATED]
+       ## 3  155874         3438 VALLEY DRI… FRAXINUS   OXYCARPA     RAYWOOD       RAYWOOD ASH N        N            8                     3 ... [TRUNCATED]
+       ## 4  156034         2106 W 19TH AV   FRAXINUS   OXYCARPA     RAYWOOD       RAYWOOD ASH N        N            8                     2 ... [TRUNCATED]
+       ## 5  156061         2659 W 19TH AV   FRAXINUS   AMERICANA    NA            WHITE ASH   N        N            6                     2 ... [TRUNCATED]
+       ## 6  156115         2489 W 21ST AV   FRAXINUS   OXYCARPA     RAYWOOD       RAYWOOD ASH N        N            8                     2 ... [TRUNCATED]
+       ## 7  156198         2225 W 21ST AV   FRAXINUS   OXYCARPA     RAYWOOD       RAYWOOD ASH N        N            8                     2 ... [TRUNCATED]
+       ## 8  156203         2345 W 21ST AV   FRAXINUS   OXYCARPA     RAYWOOD       RAYWOOD ASH N        N            8                     2 ... [TRUNCATED]
+       ## 9  156229         2457 W 22ND AV   FRAXINUS   OXYCARPA     RAYWOOD       RAYWOOD ASH N        N            7                     3 ... [TRUNCATED]
+       ## 10  156232         3888 VALLEY DRI… FRAXINUS   OXYCARPA     RAYWOOD       RAYWOOD ASH N        N            8                      ... [TRUNCATED]
+       ## # … with 5,159 more rows, and 8 more variables: neighbourhood_name <chr>, street_side_name <chr>, height_range_id <dbl>, diameter  ... [TRUNCATED]
+       ## tree_id civic_number std_street  genus_name species_name cultivar_name common_name  assigned root_barrier plant_area
+       ## <dbl>        <dbl> <chr>       <chr>      <chr>        <chr>         <chr>        <chr>    <chr>        <chr>
+       ## 1  149590          858 E 39TH AV   FRAXINUS   AMERICANA    AUTUMN APPLA… AUTUMN APPL… Y        N            4
+       ## 2  149604         5032 WINDSOR ST  ACER       CAMPESTRE    NA            HEDGE MAPLE  N        N            4
+       ## 3  149617         4909 SHERBROOKE… ACER       PLATANOIDES  COLUMNARE     COLUMNAR NO… N        N            6
+       ## 4  149618         4925 SHERBROOKE… ACER       PLATANOIDES  COLUMNARE     COLUMNAR NO… N        N            6
+       ## 5  149619         4969 SHERBROOKE… ACER       PLATANOIDES  COLUMNARE     COLUMNAR NO… N        N            3
+       ## 6  149625          720 E 39TH AV   FRAXINUS   AMERICANA    AUTUMN APPLA… AUTUMN APPL… N        N            3
+       ## 7  149640         6968 SELKIRK ST  ACER       PLATANOIDES  COLUMNARE     COLUMNAR NO… N        N            N
+       ## 8  149673         5241 WINDSOR ST  FRAXINUS   OXYCARPA     RAYWOOD       RAYWOOD ASH  N        N            4
+       ## 9  149680         5311 WINDSOR ST  ACER       CAMPESTRE    NA            HEDGE MAPLE  N        N            4
+       ## 10  149683         7011 SELKIRK ST  ACER       PLATANOIDES  COLUMNARE     COLUMNAR NO… N        N            N
+       ## # … with 43,433 more rows, and 10 more variables: on_street_block <dbl>, on_street <chr>, neighbourhood_name <chr>,
+       ## #   street_side_name <chr>, height_range_id <dbl>, diameter <dbl>, curb <chr>, date_planted <date>, longitude <dbl>,
+
+Rd file 'TmeDifCal.Rd':
+  \examples lines wider than 100 characters:
+     ## tree_id civic_number std_street  genus_name species_name cultivar_name common_name  assigned root_barrier plant_area
+     ## <dbl>        <dbl> <chr>       <chr>      <chr>        <chr>         <chr>        <chr>    <chr>        <chr>
+     ## 1  149556          494 W 58TH AV   ULMUS      AMERICANA    BRANDON       BRANDON ELM  N        N            N
+     ## 2  149590          858 E 39TH AV   FRAXINUS   AMERICANA    AUTUMN APPLA… AUTUMN APPL… Y        N            4
+     ## 3  149617         4909 SHERBROOKE… ACER       PLATANOIDES  COLUMNARE     COLUMNAR NO… N        N            6
+     ## 4  149618         4925 SHERBROOKE… ACER       PLATANOIDES  COLUMNARE     COLUMNAR NO… N        N            6
+     ## 5  149619         4969 SHERBROOKE… ACER       PLATANOIDES  COLUMNARE     COLUMNAR NO… N        N            3
+     ## 6  149625          720 E 39TH AV   FRAXINUS   AMERICANA    AUTUMN APPLA… AUTUMN APPL… N        N            3
+     ## 7  149640         6968 SELKIRK ST  ACER       PLATANOIDES  COLUMNARE     COLUMNAR NO… N        N            N
+     ## 8  149673         5241 WINDSOR ST  FRAXINUS   OXYCARPA     RAYWOOD       RAYWOOD ASH  N        N            4
+     ## 9  149683         7011 SELKIRK ST  ACER       PLATANOIDES  COLUMNARE     COLUMNAR NO… N        N            N
+     ## 10  149684         1223 W 54TH AV   ACER       PLATANOIDES  COLUMNARE     COLUMNAR NO… N        N            N
+
+These lines will be truncated in the PDF manual.
+* checking Rd cross-references ... OK
+* checking for missing documentation entries ... OK
+* checking for code/documentation mismatches ... OK
+* checking Rd \usage sections ... WARNING
+Undocumented arguments in documentation object 'SubGrpSel'
+  ‘col_name’
+
+Functions with \usage entries need to have the appropriate \alias
+entries, and all their arguments documented.
+The \usage entries must correspond to syntactically valid R code.
+See chapter ‘Writing R documentation files’ in the ‘Writing R
+Extensions’ manual.
+* checking Rd contents ... OK
+* checking for unstated dependencies in examples ... OK
+* checking contents of ‘data’ directory ... OK
+* checking data for non-ASCII characters ... OK
+* checking LazyData ... OK
+* checking data for ASCII and uncompressed saves ... OK
+* checking examples ... OK
+* checking for unstated dependencies in ‘tests’ ... OK
+* checking tests ... OK
+  Running ‘testthat.R’
+* checking for non-standard things in the check directory ... OK
+* checking for detritus in the temp directory ... OK
+* DONE
+Status: 1 WARNING, 2 NOTEs
