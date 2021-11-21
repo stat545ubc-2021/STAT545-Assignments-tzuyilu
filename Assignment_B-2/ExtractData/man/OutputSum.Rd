@@ -19,16 +19,34 @@ The output will be a data frame.
 }
 \description{
 This function generates a summary of specific columns from the input data.
+Users can flip through the data easily.
 }
 \examples{
-If you want to group the data set by "species_name" and then output the summary about "tree_age":
+If you want to group the data set by "species_name" and then output the summary about "diameter":
 
  {Syntax}
- OutputSum(vancouver_trees,"species_name","tree_age")
+ OutputSum(vancouver_trees,"species_name","diameter")
 
  {Result}
+ # A tibble: 283 × 7
+ species_name   diameter_mean diameter_min diameter_max diameter_median diameter_sd     n
+ <chr>                  <dbl>        <dbl>        <dbl>           <dbl>       <dbl> <int>
+   1 ABIES                  12.9           2           35               2          7.51   139
+ 2 ACERIFOLIA   X         20.8           2           57               2         11.8   1724
+ 3 ACUMINATA              10.9           2           28               2          9.91     7
+ 4 ACUTISSIMA              8.87          2           36               2          4.33   526
+ 5 AILANTHIFOLIA          32            24           40              24          6.44     5
+ 6 ALBA                   19.4           1.5         40               1.5       14.4     26
+ 7 ALBA-SINENSIS           8.67          7           10               7          1.53     3
+ 8 ALNIFOLIA               5.23          2           20.2             2          2.65   274
+ 9 ALPINUM                 8             8            8               8         NA        1
+ 10 ALTISSIMA              15.9           3           21.5             3          8.64     4
+ # … with 273 more rows
+
+
+
 
 
 If you want to generate a summary with multiple columns:
-OutputSum(datateachr::vancouver_trees,"neighbourhood_name",c("tree_age","diameter"))
+OutputSum(vancouver_trees,"neighbourhood_name",c("diameter","height_range_id"))
 }
