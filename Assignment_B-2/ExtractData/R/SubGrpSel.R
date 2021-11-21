@@ -3,6 +3,7 @@
 #' @description   This function pulls out the specified categories in the data.
 #'
 #' @param  input_data Data with planted_date of trees. This parameter should be a data frame.
+#' @param  col_name The column which you will extract categories. This parameter should be a character.
 #' @param  chosen_grp The areas you are interested in. This parameter should be a character.
 #'
 #' @return A filtered data in the interested regions. The output will be a data frame.
@@ -10,7 +11,9 @@
 #'
 #' @export
 #' @examples
-#' ## If you want to choose data located in a specific area ("ARBUTUS-RIDGE") from the "vancouver_trees" dataset:
+#' ## If you want to choose data located in a specific area ("ARBUTUS-RIDGE") from
+#' ## the "vancouver_trees" dataset:
+#'
 #' ## {Syntax}
 #'  \dontrun{
 #'  SubGrpSel(vancouver_trees,"neighbourhood_name","ARBUTUS-RIDGE")

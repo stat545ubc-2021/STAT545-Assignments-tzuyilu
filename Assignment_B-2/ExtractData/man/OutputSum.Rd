@@ -23,46 +23,15 @@ Users can flip through the data easily.
 }
 \examples{
 ## If you want to group the data set by "species_name" and then output the summary about "diameter":
-
- ## {Syntax}
+## {Syntax}
  \dontrun{
  OutputSum(vancouver_trees,"species_name","diameter")
  }
 
- ## {Result}
- # A tibble: 283 × 7
- ## species_name   diameter_mean diameter_min diameter_max diameter_median diameter_sd     n
- ## <chr>                  <dbl>        <dbl>        <dbl>           <dbl>       <dbl> <int>
- ## 1 ABIES                  12.9           2           35               2          7.51   139
- ## 2 ACERIFOLIA   X         20.8           2           57               2         11.8   1724
- ## 3 ACUMINATA              10.9           2           28               2          9.91     7
- ## 4 ACUTISSIMA              8.87          2           36               2          4.33   526
- ## 5 AILANTHIFOLIA          32            24           40              24          6.44     5
- ## 6 ALBA                   19.4           1.5         40               1.5       14.4     26
- ## 7 ALBA-SINENSIS           8.67          7           10               7          1.53     3
- ## 8 ALNIFOLIA               5.23          2           20.2             2          2.65   274
- ## 9 ALPINUM                 8             8            8               8         NA        1
- ## 10 ALTISSIMA              15.9           3           21.5             3          8.64     4
- ## # … with 273 more rows
 
 ## If you want to generate a summary with multiple columns:
 ## {Syntax}
 \dontrun{
 OutputSum(vancouver_trees,"neighbourhood_name",c("diameter","height_range_id"))
 }
-## {Result}
-# A tibble: 22 × 7
-## neighbourhood_name       height_range_id_… height_range_id… height_range_id… height_range_id… height_range_id…     n
-## <chr>                                <dbl>            <dbl>            <dbl>            <dbl>            <dbl> <int>
-##   1 ARBUTUS-RIDGE                         2.72                0               10                0             1.55  5169
-## 2 DOWNTOWN                              2.44                0                8                0             1.22  5159
-## 3 DUNBAR-SOUTHLANDS                     3.03                0               10                0             1.93  9415
-## 4 FAIRVIEW                              2.80                0                9                0             1.52  4002
-## 5 GRANDVIEW-WOODLAND                    2.60                0                9                0             1.56  6703
-## 6 HASTINGS-SUNRISE                      2.46                0                8                0             1.40 10547
-## 7 KENSINGTON-CEDAR COTTAGE              2.60                0               10                0             1.42 11042
-## 8 KERRISDALE                            2.81                0               10                0             1.69  6936
-## 9 KILLARNEY                             2.50                0                9                0             1.26  6148
-## 10 KITSILANO                             3.26                0               10                0             1.86  8115
-## # … with 12 more rows
 }

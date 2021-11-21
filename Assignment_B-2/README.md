@@ -7,7 +7,7 @@ In exercise 2, I created a README rmd file and kniited it to a md file.
 In exercise 3, I edit the DESCRIPTION file and import external packages.
 In exercise 4, I created tests for the functions.
 
-The required contents include: 
+The required contents in the "ExtractData"" package include: 
   (v) NAMESPACE
   (v) DESCRIPTION
   (v) README.Rmd (and README.md)
